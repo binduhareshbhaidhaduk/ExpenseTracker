@@ -1,0 +1,14 @@
+.btn-outline-warning {
+    border-color: #ffc107; /* Customize border color */
+    color: #ffc107; /* Customize text color */
+}
+.btn-outline-danger {
+    border-color: #dc3545; /* Customize border color */
+    color: #dc3545; /* Customize text color */
+}
+.btn-outline-warning:hover, .btn-outline-danger:hover {
+    background-color: transparent; /* Remove background color on hover */
+}
+.btn i {
+    margin-right: 5px; /* Space between icon and text */
+}

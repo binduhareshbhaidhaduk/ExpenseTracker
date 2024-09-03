@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= Tracker ? 'Edit' : 'Add' %> Transaction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2><%= Tracker ? 'Edit' : 'Add' %> Transaction</h2>
+        <form method="post" action="<%= Tracker ? '/updateTracker/' + Tracker._id : '/addTracker' %>">
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select name="type" class="form-control" required>
+                    <option value="Income" <%= Tracker && Tracker.type === 'Income' ? 'selected' : '' %>>Income</option>
+                    <option value="Expense" <%= Tracker && Tracker.type === 'Expense' ? 'selected' : '' %>>Expense</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" name="category" class="form-control" placeholder="Category" required value="<%= Tracker ? Tracker.category : '' %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" class="form-control" placeholder="Amount" required value="<%= Tracker ? Tracker.amount : '' %>" />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" class="form-control" rows="3" placeholder="Description (optional)"><%= Tracker ? Tracker.description : '' %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" class="form-control" value="<%= Tracker ? Tracker.date.toISOString().split('T')[0] : '' %>" />
+            </div>
+
+            <button type="submit" class="btn btn-dark"><%= Tracker ? 'Update' : 'Submit' %></button>
+        </form>
+    </div>
+</body>
+
+</html>

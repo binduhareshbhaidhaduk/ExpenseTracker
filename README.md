@@ -26,4 +26,4 @@ To get started with the project, follow these steps:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/jencyy/ExpenseTracker.git
+   git clone https://github.com/binduhareshbhaidhaduk/ExpenseTracker.git
